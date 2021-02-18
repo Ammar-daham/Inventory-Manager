@@ -12,7 +12,9 @@
     <script src="tableManager.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+<header>
 <nav class="navbar navbar-expand-lg navbar-light bg-success">
     <a class="navbar-brand text-white" href="#">Inventory Manager</a>
     <ul class="navbar-nav ">
@@ -27,24 +29,24 @@
         </li>
     </ul>
 </nav>
-
-
-
+</header>
+<main>
 <table class="tablemanager" id = "table">
     <thead>
-    <div id="products"></div>
     <tr>
-        <th>Name</th>
-        <th>Brand</th>
-        <th>Color</th>
-        <th>Price</th>
-        <th>Type</th>
+        <th>Id</th>
+        <th >Name</th>
+        <th >Brand</th>
+        <th >Color</th>
+        <th >Price</th>
+        <th >Type</th>
+        <th>Stock</th>
     </tr>
     </thead>
     <tbody id="data">
     </tbody>
 </table>
-
+</main>
 </body>
 
 <script src="js/facemasks.js"></script>
