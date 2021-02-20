@@ -1,14 +1,18 @@
-
-
-
-let obj1 = fetch('https://cors-anywhere.herokuapp.com/https://bad-api-assignment.reaktor.com/v2/products/gloves')
+let baseUrl = "https://cors-anywhere.herokuapp.com/https://bad-api-assignment.reaktor.com/v2/availability/"
+let countOfBarndAvailablities = []
+ fetch('https://cors-anywhere.herokuapp.com/https://bad-api-assignment.reaktor.com/v2/products/gloves')
     .then(function(response) {
         return response.json();
     }).then(function(json) {
-        getData(json);
-    }).catch(function(error){
-        console.log(error);
-    });
+        json.map(b => {
+                return countOfBarndAvailablities.push(b.id)
+            })
+        getData(json )
+    }).catch(function(error) {
+     console.log(error);
+    })
+
+
 
 function getData(jsonData) {
     if(jsonData.length > 0){
@@ -22,6 +26,8 @@ function getData(jsonData) {
                 <td>${jsonData[i].color}</td>
                 <td>${jsonData[i].price}</td>
                 <td>${jsonData[i].type}</td>
+                <td >${countOfBarndAvailablities[i] === jsonData[i].id ?'In stock':null}</td>
+                
             </tr>
             `
         }
@@ -29,30 +35,14 @@ function getData(jsonData) {
     }
 }
 
-let obj2 = fetch('https://cors-anywhere.herokuapp.com/https://bad-api-assignment.reaktor.com/v2/availability/ippal')
-    .then(function(response) {
-        return response.json();
-    }).then(function(json) {
-        console.log(json);
-    }).catch(function(error){
-        console.log(error);
-    });
-/*
-var flag=true;
 
-if(Object.keys(obj1).length==Object.keys(obj2).length){
-    for(key in obj1) {
-        if(obj1[key] == obj2[key]) {
-            continue;
-        }
-        else {
-            flag=false;
-            break;
-        }
-    }
+/*
+function getStock(name)  {
+        fetch(baseUrl + name)
+            .then(response => response.json())
+            .then(data => {
+                return data
+            })
+            .catch(err => console.error(err));
 }
-else {
-    flag=false;
-}
-console.log("is object equal"+flag);
 */
