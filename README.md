@@ -22,3 +22,5 @@ The client has instructed you that both APIs have an internal cache of about 5 m
 I implemented a web application to manage the products in warehouse 
 I got the products api working i used https://cors-anywhere.herokuapp.com/ to get the data from bad api sometimes it needs to get temporary access to the data
 
+App's screenshot
+https://github.com/ammaraljewary/Inventory-Manager/blob/master/image/inventory.png
